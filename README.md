@@ -21,12 +21,12 @@
 
 ## ✨ Key Features
 
-<picture>
+- <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/graph-up-arrow-white.svg">
     <img src="inventory-web/src/assets/images/icons/graph-up-arrow.svg" width="20">
   </picture> Interactive Dashboard: Get a bird's-eye view of your business with high-level metrics and intuitive charts.
 
-<picture>
+- <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/basket-white.svg">
     <img src="inventory-web/src/assets/images/icons/basket.svg" width="20">
   </picture> Raw Materials Management: Keep track of stock levels, units of measurement, and acquisition alerts.
