@@ -21,35 +21,35 @@
 
 ## ✨ Key Features
 
-- <picture>
+<picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/graph-up-arrow-white.svg">
     <img src="inventory-web/src/assets/images/icons/graph-up-arrow.svg" width="20">
-  </picture> Interactive Dashboard: Get a bird's-eye view of your business with high-level metrics and intuitive charts.
+  </picture><strong> Interactive Dashboard:</strong> Get a bird's-eye view of your business with high-level metrics and intuitive charts.
 
-- <picture>
+<picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/basket-white.svg">
     <img src="inventory-web/src/assets/images/icons/basket.svg" width="20">
-  </picture> Raw Materials Management: Keep track of stock levels, units of measurement, and acquisition alerts.
+  </picture><strong> Raw Materials Management:</strong> Keep track of stock levels, units of measurement, and acquisition alerts.
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/box-seam-white.svg">
     <img src="inventory-web/src/assets/images/icons/box-seam.svg" width="20">
-  </picture> Product Composition: Build products using detailed recipes and measurement conversions.
+  </picture><strong> Product Composition:</strong> Build products using detailed recipes and measurement conversions.
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/graph-up-white.svg">
     <img src="inventory-web/src/assets/images/icons/graph-up.svg" width="20">
-  </picture> Maximum Production Module: Instantly calculate how many units of a specific product can be manufactured before running out of limiting ingredients.
+  </picture><strong> Maximum Production Module:</strong> Instantly calculate how many units of a specific product can be manufactured before running out of limiting ingredients.
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/speedometer-white.svg">
     <img src="inventory-web/src/assets/images/icons/speedometer.svg" width="20">
-  </picture> **Production Optimization:** Intelligent algorithms that analyze current inventory to suggest the most profitable production strategy.
+  </picture><strong> Production Optimization:</strong> Intelligent algorithms that analyze current inventory to suggest the most profitable production strategy.
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/diagram-3-white.svg">
     <img src="inventory-web/src/assets/images/icons/diagram-3.svg" width="20">
-  </picture> Simulation Dashboard: Test hypothetical scenarios without affecting actual data to forecast production bottlenecks.
+  </picture><strong> Simulation Dashboard:</strong> Test hypothetical scenarios without affecting actual data to forecast production bottlenecks.
 
 ## 🛠️ Technology Stack
 
