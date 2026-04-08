@@ -1,0 +1,212 @@
+<div class="container mt-5 mb-5 pb-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-11 col-lg-10">
+
+      <!-- Title -->
+      <div class="d-flex align-items-center mb-4">
+        <i class="bi bi-diagram-3 ms-3 me-3 fs-2"></i>
+        <h2 class="mt-2 text-dark">Product Simulation</h2>
+      </div>
+
+      <!-- Control bar: Select + Quantity + Button -->
+      <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+
+        <!-- Select Product -->
+        <div class="position-relative ">
+          <i class="bi bi-search text-muted position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+          <select class="form-select rounded-pill shadow-sm ps-5 " [(ngModel)]="productId" name="productId"
+            [ngClass]="{'text-muted': productId === null}">
+            <option [ngValue]="null" disabled>Product</option>
+            <option *ngFor="let p of products" [ngValue]="p.id">
+              {{ p.code }} - {{ p.name }}
+            </option>
+          </select>
+        </div>
+
+        <!-- Input Quantity -->
+        <div class="custom-width-input-quantity">
+          <input type="number" class="form-control rounded-pill shadow-sm text-center" [(ngModel)]="quantity"
+            name="quantity" min="1" step="1" placeholder="Quantity">
+        </div>
+
+        <button
+          class="btn btn-outline-secondary border shadow-sm rounded-pill py-1 ps-1 pe-4 d-flex align-items-center gap-2 btn-register"
+          type="button" (click)="simulate()" [disabled]="!productId || !quantity || loading">
+          <span class="icon-circle d-flex align-items-center justify-content-center">
+            <i class="bi bi-play-fill" *ngIf="!loading"></i>
+            <span class="spinner-border spinner-border-sm" *ngIf="loading"></span>
+          </span>
+          <span>{{ loading ? 'Simulating...' : 'Simulate' }}</span>
+        </button>
+      </div>
+
+      <!-- ===== EMPTY STATE ===== -->
+      <div *ngIf="!loading && !result" class="text-center py-5 text-muted">
+        <i class="bi bi-search fs-1 d-block mb-3"></i>
+        <p class="fs-5">Who are we going to simulate?</p>
+        <small>Select a product above and enter the desired quantity.</small>
+      </div>
+
+      <!-- ===== LOADING ===== -->
+      <div *ngIf="loading" class="text-center py-5">
+        <div class="spinner-border text-secondary" role="status"></div>
+        <div class="text-muted mt-3">Simulating production...</div>
+      </div>
+
+      <!-- ===== RESULT ===== -->
+      <div *ngIf="!loading && result">
+
+        <!-- Banner SUFFICIENTE -->
+        <div *ngIf="isSufficient" class="alert bg-sky-blue d-flex align-items-center gap-3 rounded-4 shadow-sm mb-4">
+          <i class="bi bi-check-circle-fill fs-1"></i>
+          <div>
+            <strong class="fs-5">Sufficient Stock!</strong>
+            <div class="small mt-1">
+              The product <strong>{{ result.product }}</strong>
+              can be produced in <strong>{{ result.requestedQuantity }}</strong>
+              unit(s).
+              Current maximum capacity: <strong>
+                {{ result.possibleQuantity }}</strong>
+              unidade(s).
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner INSUFICIENTE -->
+        <div *ngIf="isInsufficient"
+          class="alert alert-warning d-flex align-items-center gap-3 rounded-4 shadow-sm mb-4">
+          <i class="bi bi-exclamation-triangle-fill fs-1"></i>
+          <div>
+            <strong class="fs-5">Insufficient Stock!</strong>
+            <div class="small mt-1">
+              Requested: <strong>{{ result.requestedQuantity }}</strong> Unit(s). <br>
+              Maximum Production: <strong>{{ result.possibleQuantity }}</strong> Unit(s). <br>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table: Missing Items -->
+        <div *ngIf="isInsufficient && result.missingMaterials.length > 0" class="mb-4">
+          <div class="table-responsive shadow-sm rounded-4 border">
+            <table class="table align-middle m-0">
+              <thead class="table-dark">
+                <tr>
+                  <th colspan="3" class="ps-3 bg-warning-subtle text-black">
+                    <i class="bi bi-cart3 me-2 fs-5"></i>What needs to be bought
+                  </th>
+                </tr>
+                <tr>
+                  <th class="text-center">Material</th>
+                  <th class="text-center">Missing Quantity</th>
+                  <th class="text-center">Cart</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let miss of result.missingMaterials" [class.table]="miss.missing > 0"
+                  [class.table]="miss.missing <= 0">
+                  <td class="text-center">
+                    {{ miss.material }}
+                  </td>
+
+                  <td class="text-center ">
+                    <small class="badge bg-white text-black border rounded-pill ">
+                      {{ miss.missing | number:'1.0-3' }}
+                    </small>
+                  </td>
+                  <td class="text-center">
+                    <i class="bi bi-cart3  text-warning" *ngIf="miss.missing <= miss.missing"></i>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table: All Materials (required vs stock) -->
+        <div class="mb-4">
+          <div class="table-responsive shadow-sm rounded-4 border">
+            <table class="table align-middle table-hover m-0">
+              <thead class="table-dark">
+                <tr>
+                  <th colspan="4" class="ps-3 bg-sky-blue text-black">
+                    <i class="bi bi-box-seam me-2 fs-5"></i>
+                    Materials for {{ result.requestedQuantity }} unit(s) of {{ result.product }}
+                  </th>
+                </tr>
+                <tr>
+                  <th class="text-center">Material</th>
+                  <th class="text-center">Required</th>
+                  <th class="text-center">Stock</th>
+                  <th class="text-center">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let mat of result.materials" [class.table-danger]="mat.required > mat.stock"
+                  [class.table]="mat.required <= mat.stock">
+                  <td class="text-center">{{ mat.material }}</td>
+                  <td class="text-center">
+                    <small>{{ mat.required | number:'1.0-3'}}
+                      {{ mat.measure === 'G' ? 'g' : (mat.measure === 'ML' ? 'ml' : mat.measure === 'UN' ? 'un' :
+                      mat.measure)}}
+                    </small>
+                  </td>
+                  <td class="text-center">
+                    <small [class.text-danger]="mat.required > mat.stock" [class.fw-bold]="mat.required > mat.stock">
+                      {{ mat.stock | number:'1.0-3' }}
+                      {{ mat.measure === 'G' ? 'g' : (mat.measure === 'ML' ? 'ml' :
+                      mat.measure === 'UN' ? 'un' :'')}}
+                    </small>
+                  </td>
+                  <td class="text-center">
+                    <i class="bi bi-check-circle text-success" *ngIf="mat.required <= mat.stock"></i>
+                    <i class="bi bi-x-circle text-danger" *ngIf="mat.required > mat.stock"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table: High Stock Materials -->
+        <div *ngIf="result.highStockMaterials.length > 0">
+          <div class="table-responsive shadow-sm rounded-4 border">
+            <table class="table align-middle m-0">
+              <thead class="table-dark">
+                <tr>
+                  <th colspan="4" class="ps-3 bg-teal-400 text-black">
+                    <i class="bi bi-graph-up-arrow me-2 fs-5"></i>High Stock Materials
+                  </th>
+                </tr>
+                <tr>
+                  <th class="text-center">Code</th>
+                  <th class="text-center">Material</th>
+                  <th class="text-center">Quantity</th>
+                  <th class="text-center">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let high of result.highStockMaterials">
+                  <td class="small text-center">{{ high.code }}</td>
+                  <td class="text-center">
+                    {{ high.material }}
+                  </td>
+                  <td class="text-center">{{ high.stock | number:'1.0-3' }}
+                    <small>{{ high.measure === 'G' ? 'g' : (high.measure === 'ML' ? 'ml' :
+                      high.measure === 'UN' ? 'un' :'')}}
+                    </small>
+                  </td>
+                  <!-- Rule with positive chart icon -->
+                  <td class="text-center">
+                    <i class="bi bi-bar-chart-line-fill text-success" *ngIf="high.stock > 0"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+// Style for the winning item (highest production)
+.top td {
+  background-color: #e0cffc !important; // $indigo-100
+}
+
+.extra-small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.col-cod {
+  width: 15% !important;
+  min-width: 80px;
+}
+
+.col-prod {
+  width: 35% !important;
+}
+
+.col-max {
+  width: 20% !important;
+}
+
+.col-limit {
+  width: 30% !important;
+}
+
+@media (max-width: 768px) {
+  .col-cod {
+    width: 75px !important;
+    min-width: 75px !important;
+    font-size: 0.82rem;
+    padding: 6px 2px !important;
+  }
+
+  .col-prod {
+    width: 30% !important;
+    font-size: 0.82rem;
+  }
+
+  .col-max {
+    width: 25% !important;
+    font-size: 0.82rem;
+  }
+
+  .col-limit {
+    width: 30% !important;
+    font-size: 0.82rem;
+  }
+}

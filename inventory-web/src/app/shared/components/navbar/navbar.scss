@@ -1,0 +1,46 @@
+.navbar {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 1px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  width: 75px;
+  filter: brightness(1) invert(0);
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.4rem;
+}
+
+.navbar-toggler:hover,
+.navbar-item:hover {
+  color: white;
+  background: #000;
+}
+
+.navbar-item {
+  height: 55px;
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: 20px;
+  width: 200px;
+}
+
+.navbar-item p {
+  margin: 0;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+}
+
+

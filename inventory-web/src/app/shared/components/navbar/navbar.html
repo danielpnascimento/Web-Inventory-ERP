@@ -1,0 +1,57 @@
+<nav class="navbar nav-tabs d-md-none bg-white text-black " style="z-index: 1000;">
+
+  <div class="container-fluid">
+
+    <a class="navbar-brand ">
+      <img routerLink="/" src="assets/images/logo/sweetventory-logo.svg" class="navbar-logo " viewBox="0 0 100 100">
+    </a>
+
+    <button class="navbar-toggler shadow-sm border-0 me-2" type="button" (click)="toggleNavbarOpen()">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="navbar-collapse " [class.collapse]="navbarClose" [class.show]="!navbarClose" id="navbarClose">
+
+      <nav class="nav d-flex align-items-center justify-content-center">
+
+        <a routerLink="/app-dashboard" routerLinkActive="active"
+          class="navbar-item ms-2 d-flex align-items-center justify-content-center">
+          <i class="bi bi-graph-up-arrow me-2"></i>
+          <p>Dashboard</p>
+        </a>
+
+        <a routerLink="/app-raw-materials-list" routerLinkActive="active"
+          class="navbar-item m-2 d-flex align-items-center justify-content-center">
+          <i class="bi bi-basket me-2"></i>
+          <p>Materials</p>
+        </a>
+
+        <a routerLink="/products" routerLinkActive="active"
+          class="navbar-item ms-2 d-flex align-items-center justify-content-center">
+          <i class="bi bi-box-seam me-2"></i>
+          <p>Product</p>
+        </a>
+
+        <a routerLink="/production-maximum" routerLinkActive="active"
+          class="navbar-item m-2 d-flex align-items-center justify-content-center">
+          <i class="bi bi-graph-up me-2"></i>
+          <p>Maximum</p>
+        </a>
+
+        <a routerLink="/production-optimization" routerLinkActive="active"
+          class="navbar-item ms-2 d-flex align-items-center justify-content-center">
+          <i class="bi bi-speedometer me-2"></i>
+          <p>Optimization</p>
+        </a>
+
+        <a routerLink="/production-simulation" routerLinkActive="active"
+          class="navbar-item m-2 d-flex align-items-center justify-content-center">
+          <i class="bi bi-diagram-3 me-2"></i>
+          <p>Simulation</p>
+        </a>
+
+      </nav>
+    </div>
+  </div>
+
+</nav>

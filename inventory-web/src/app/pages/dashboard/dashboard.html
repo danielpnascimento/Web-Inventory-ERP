@@ -1,0 +1,185 @@
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center ">
+    <div class="col-12 col-md-11 col-lg-10">
+
+      <div class="row justify-content-center mb-3">
+
+        <!--1° Card - Total Raw Materials -->
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 mb-3">
+          <div class="card border-0 shadow-sm rounded-4 h-100 ">
+            <div class="card-body">
+
+              <!-- Icon -->
+              <div class="bg-teal-400 text-black rounded-4 p-3 me-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-basket fs-4"></i>
+              </div>
+
+              <!-- Content -->
+              <div class="text-center mt-2">
+                <span class="text-muted small d-block">
+                  Total Materials
+                </span>
+                <h2 class="fw-bold mb-0">
+                  {{ (materials$ | async)?.length || 0 }}
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--2° Card- Total Products-->
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 mb-3">
+          <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body">
+
+              <!-- Icon -->
+              <div class="bg-blue-100 text-black rounded-3 p-3 me-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-box-seam fs-4"></i>
+              </div>
+
+              <!-- Content -->
+              <div class="text-center mt-2">
+                <span class="text-muted small d-block">
+                  Total Products
+                </span>
+                <h2 class="fw-bold mb-0">
+                  {{ (products$ | async)?.length || 0 }}
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--3° Card- Maximum Production-->
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 mb-3">
+          <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body">
+
+              <!-- Icon -->
+              <div class="bg-indigo-100 text-black rounded-3 p-3 me-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-graph-up fs-4"></i>
+              </div>
+
+              <!-- Content -->
+              <div class="text-center mt-2" *ngIf="topProduct$ | async as top; else noMaxData">
+                <span class="text-muted small d-block ">
+                  Maximum Production
+                </span>
+                <h2 class="fw-bold mb-0">
+                  {{ top.maxProduction }}
+                </h2>
+                <h2 class="text-uppercase text-muted badge bg-indigo-100 rounded-pill shadow-sm fs-8 py-1">
+                  {{ top.product }}
+                </h2>
+              </div>
+
+              <!-- Fallback if there are no products at Maximum Production -->
+              <ng-template #noMaxData>
+                <div class="text-center">
+                  <span class="text-muted small d-block">Maximum Production</span>
+                  <h2 class="fw-bold mb-0">0</h2>
+                  <span class="text-muted small d-block">No production</span>
+                </div>
+              </ng-template>
+
+            </div>
+          </div>
+        </div>
+        <!--4° Card- Production Optimization -->
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 mb-3">
+          <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body">
+
+              <!-- Icon -->
+              <div class="bg-orange-300 text-black rounded-3 p-3 me-1 d-flex align-items-center justify-content-center">
+                <i class="bi bi-speedometer fs-4"></i>
+              </div>
+
+              <!-- Content -->
+              <div class="text-center mt-2" *ngIf="topOptimization$ | async as top; else noOptData">
+                <span class="text-muted small d-block">
+                  Production Optimization
+                </span>
+
+                <!-- Price and 'unit price' side by side -->
+                <div class="d-flex align-items-baseline justify-content-center">
+                  <div class="mt-1 me-2">
+                    <h2 class="fw-bold mb-0 fs-6">
+                      {{ top.unitPrice | currency:'BRL':'symbol' }}
+                    </h2>
+                    <small class="text-muted fs-8">Unit Price</small>
+                  </div>
+
+                  <!-- Revenue and 'Revenue' below -->
+                  <div class="mt-1">
+                    <h5 class="fw-bold mb-0 text-success fs-6">
+                      {{ top.estimatedRevenue | currency:'BRL':'symbol' }}
+                    </h5>
+                    <small class="text-muted fs-8 ">Estimated Revenue</small>
+                  </div>
+                </div>
+
+                <!-- Recommended Product Name -->
+                <div class="text-wrap">
+                  <span class="text-uppercase text-muted badge bg-orange-300 rounded-pill shadow-sm fs-8 py-1">
+                    {{ top.product }}
+                  </span>
+                </div>
+              </div>
+
+
+              <!-- Fallback caso não tenha dados de Otimização -->
+              <ng-template #noOptData>
+                <div class="text-center">
+                  <span class="text-muted small d-block">Production Optimization</span>
+                  <h2 class="fw-bold mb-0">0</h2>
+                  <span class="text-muted small d-block text-nowrap">No optimization</span>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <i class="bi bi-graph-up-arrow ms-3 me-3 fs-2"></i>
+        <h2 class="mt-2">Materials in High Demand</h2>
+      </div>
+
+      <div class="container d-flex justify-content-center nowrap-text table-wrapper mt-3 ">
+        <div class="table-responsive shadow-sm rounded-4 border w-100 ">
+          <table class="table align-middle table-hover m-0">
+            <thead class="table-dark text-center  ">
+              <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+          </table>
+
+          <div appDragScroll class="overflow-auto overflow-table-hidden">
+            <table class="table align-middle table-hover  ">
+              <tbody class="text-center ">
+
+                @if (materialsSorted$ | async; as materials) {
+
+                @for (m of materials; track m.id; let i = $index) {
+
+                <tr [class]="{'top': i < 3,'low': i >= materials.length - 2}">
+                  <td>{{m.code}}</td>
+                  <td>{{m.name}}</td>
+                  <td>{{m.quantityInStock | number:'1.0-3'}}
+                    {{m.measure === 'G' ? 'g' : (m.measure === 'ML' ? 'ml' :
+                    m.measure === 'UN' ? 'un' : '') }}
+                  </td>
+                </tr>
+                }
+                }
+              </tbody>
+
+            </table>
+
+          </div>
+        </div>
+      </div>

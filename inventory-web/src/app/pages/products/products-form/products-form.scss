@@ -1,0 +1,12 @@
+.icon-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #fff;
+  flex-shrink: 0; /* Prevents it from being crushed by flex */
+}
+
+//For the quantity form
+.custom-width-input-quantity-form {
+  width: 130px !important;
+}

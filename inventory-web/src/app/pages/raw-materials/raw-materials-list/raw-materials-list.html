@@ -1,0 +1,187 @@
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center ">
+    <div class="col-12 col-md-11 col-lg-10">
+
+      <div class="d-flex align-items-center">
+        <i class="bi bi-basket ms-3 me-3 fs-2"></i>
+        <h2 class="mt-2">Materials</h2>
+      </div>
+
+      <div
+        class="container mt-3 mb-3 d-flex justify-content-between align-items-center flex-nowrap gap-3 w-75 nowrap-text ">
+
+        <div class="container d-flex justify-content-between me-sm-3  ">
+          <div class="position-relative custom-width-search">
+            <i
+              class="bi bi-search border-secondary text-muted position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <input type="search" class="form-control rounded-pill ps-5" placeholder="Search by Code, Name and Qty."
+              aria-label="Search" [formControl]="searchControl">
+          </div>
+        </div>
+        <button
+          class="btn btn-outline-secondary border shadow-sm rounded-pill py-1 ps-1 pe-4 d-flex align-items-center gap-2 btn-register"
+          type="button" (click)="openOffcanvas()">
+          <span class="icon-circle d-flex align-items-center justify-content-center">
+            <i class="bi bi-plus-lg"></i>
+          </span>
+          <span>Register</span>
+        </button>
+      </div>
+
+      <div class="container d-flex justify-content-center nowrap-text table-wrapper ">
+        <div class="table-responsive shadow-sm rounded-4 border w-100 ">
+          <table class="table align-middle table-hover m-0">
+            <thead class="table-dark text-center  ">
+              <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+          </table>
+
+          <!-- Table body with scroll -->
+          <div appDragScroll class="overflow-auto overflow-table-oculto">
+            <table class="table align-middle table-hover  ">
+              <tbody class="text-center ">
+                <tr *ngIf="noResults">
+                  <td colspan="4" class="text-center">No results found!</td>
+                </tr>
+
+                <ng-container *ngIf="!noResults">
+                  <tr *ngFor="let material of getItemsPaginated(); trackBy: trackById">
+
+                    <td>{{material.code}}</td>
+                    <td class="text-wrap">{{material.name}}</td>
+                    <td>
+                      {{ material.quantityInStock | number:'1.0-3' }}
+                      <small>
+                        {{ material.measure === 'G' ? 'g' : (material.measure === 'ML' ? 'ml' :
+                        material.measure === 'UN' ? 'un' : '') }}
+                      </small>
+                    </td>
+                    <td>
+                      <!-- Actions -->
+                      <button type="button"
+                        class="btn btn-sm btn-outline-secondary rounded-pill px-2 shadow-sm nowrap-text me-2"
+                        (click)="edit(material)">
+                        <!-- Edit -->
+                        <i class="bi bi-pencil-square"></i>
+                      </button>
+                      <button type="button"
+                        class="btn btn-sm btn-outline-secondary rounded-pill px-2 shadow-sm nowrap-text"
+                        (click)="deleteById(material.id!)">
+                        <!-- Delete -->
+                        <i class="bi bi-trash3"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Dropdown -->
+      <div class="d-flex flex-wrap justify-content-center justify-content-xl-around mt-4 ">
+
+        <div class="me-5 mb-4 text-nowrap ">
+          Total:<span
+            class="btn bg-dark border text-white shadow-sm rounded-pill rounded-pill shadow-sm px-3 py-1 mx-2 me-4">
+            {{ filteredList.length }}</span>
+
+          <label for="pageSize" class="me-2 small-responsive">Items per page</label>
+          <select id="pageSize"
+            class="badge text-bg-light text-start form-select rounded-pill shadow-sm border py-2 w-25 "
+            [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange()">
+            <option [value]="10">10</option>
+            <option [value]="20">20</option>
+            <option [value]="30">30</option>
+            <option [value]="filteredList.length">All</option>
+          </select>
+        </div>
+
+        <!-- Pagination (prev / pages / next) -->
+        <nav class="">
+          <ul class="pagination pagination-sm justify-content-center  ">
+
+            <!-- Previous -->
+            <li class="page-item">
+              <a class="page-link custom-outline border rounded-pill shadow-sm py-1 px-3 me-1"
+                [class.disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
+                <i class="bi bi-chevron-left "></i>
+              </a>
+            </li>
+
+            <!-- ... left -->
+            <li class="page-item">
+              <span class="page-link text-black rounded-pill shadow-sm py-1 px-3 me-1 "
+                [style.visibility]="currentPage > 3 ? 'visible' : 'hidden'">
+                ...
+              </span>
+            </li>
+
+            <!-- pages -->
+            <li class="page-item" *ngFor="let page of getPages()" [class.active]="page === currentPage">
+              <a class="page-link text-black rounded-pill shadow-sm py-1 px-3 me-1" (click)="changePage(page)"
+                [ngClass]="{'bg-dark text-white border-dark': page === currentPage, 'text-black': page !== currentPage }">
+                {{ page }}
+              </a>
+            </li>
+
+            <!-- ... right -->
+            <li class="page-item">
+              <span class="page-link text-black rounded-pill shadow-sm py-1 px-3 me-1"
+                [style.visibility]="currentPage < totalPages - 2 ? 'visible' : 'hidden'">
+                ...
+              </span>
+            </li>
+
+            <!-- last -->
+            <li class="page-item">
+              <a class="page-link text-black rounded-pill shadow-sm py-1 px-3 me-1"
+                [style.visibility]="currentPage < totalPages - 1 " (click)="changePage(totalPages)">
+                {{ totalPages }}
+              </a>
+            </li>
+
+            <!-- Next -->
+            <li class="page-item">
+              <a class="page-link custom-outline border rounded-pill shadow-sm py-1 px-3"
+                [class.disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">
+                <i class="bi bi-chevron-right"></i>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-end rounded-start-5 custom-offcanvas " tabindex="-1" id="offcanvasMaterial"
+  aria-labelledby="offcanvasMaterialLabel">
+
+  <div class="offcanvas-header bg-teal-400 d-flex justify-content-between pb-4 ">
+
+    <div class="d-flex align-items-center mt-4 ">
+      <i class="bi bi-basket ms-3 me-3 fs-2"></i>
+      <h2 class="mt-2">Register</h2>
+    </div>
+
+    <button type="button"
+      class="btn btn-sm btn-outline-secondary btn-white-outline border rounded-pill shadow-sm me-3 px-3 mt-3"
+      data-bs-dismiss="offcanvas" aria-label="Close" (click)="closeOffcanvas()">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+  </div>
+
+  <div class="offcanvas-body">
+    <app-raw-material-form [selectedMaterial]="materialEdit" (retorno)="returnRegister($event)"></app-raw-material-form>
+  </div>
+</div>

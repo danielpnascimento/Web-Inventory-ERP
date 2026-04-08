@@ -1,0 +1,18 @@
+.bg-sky-blue {
+    background-color: #87CEFA !important;
+}
+
+.top td {
+    background: #87CEFA !important;
+}
+
+.custom-width-input-quantity {
+    max-width: 130px !important;
+}
+
+@media (max-width: 768px) {
+    .custom-width-input-quantity {
+        width: 330px !important;
+    }
+}
+
