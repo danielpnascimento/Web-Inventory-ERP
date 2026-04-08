@@ -21,12 +21,12 @@
 
 ## ✨ Key Features
 
-- <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/graph-up-arrow.svg" alt="Dashboard" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Interactive Dashboard:** Get a bird's-eye view of your business with high-level metrics and intuitive charts.
-- <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/basket.svg" alt="Raw Materials" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Raw Materials Management:** Keep track of stock levels, units of measurement, and acquisition alerts.
-- <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/box-seam.svg" alt="Products" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Product Composition:** Build products using detailed recipes and measurement conversions.
-- <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/graph-up.svg" alt="Maximum Production" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Maximum Production Module:** Instantly calculate how many units of a specific product can be manufactured before running out of limiting ingredients.
-- <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/speedometer.svg" alt="Optimization" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Production Optimization:** Intelligent algorithms that analyze current inventory to suggest the most profitable production strategy.
-- <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/diagram-3.svg" alt="Simulation" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Simulation Dashboard:** Test hypothetical scenarios without affecting actual data to forecast production bottlenecks.
+- <img src="inventory-web/src/assets/icons/graph-up-arrow.svg" alt="Dashboard" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Interactive Dashboard:** Get a bird's-eye view of your business with high-level metrics and intuitive charts.
+- <img src="inventory-web/src/assets/icons/basket.svg" alt="Raw Materials" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Raw Materials Management:** Keep track of stock levels, units of measurement, and acquisition alerts.
+- <img src="inventory-web/src/assets/icons/box-seam.svg" alt="Products" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Product Composition:** Build products using detailed recipes and measurement conversions.
+- <img src="inventory-web/src/assets/icons/graph-up.svg" alt="Maximum Production" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Maximum Production Module:** Instantly calculate how many units of a specific product can be manufactured before running out of limiting ingredients.
+- <img src="inventory-web/src/assets/icons/speedometer.svg" alt="Optimization" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Production Optimization:** Intelligent algorithms that analyze current inventory to suggest the most profitable production strategy.
+- <img src="inventory-web/src/assets/icons/diagram-3.svg" alt="Simulation" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Simulation Dashboard:** Test hypothetical scenarios without affecting actual data to forecast production bottlenecks.
 
 ## 🛠️ Technology Stack
 
