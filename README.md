@@ -21,12 +21,37 @@
 
 ## ✨ Key Features
 
-- <img src="inventory-web/src/assets/images/icons/graph-up-arrow.svg" alt="Dashboard" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Interactive Dashboard:** Get a bird's-eye view of your business with high-level metrics and intuitive charts.
-- <img src="inventory-web/src/assets/icons/images/basket.svg" alt="Raw Materials" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Raw Materials Management:** Keep track of stock levels, units of measurement, and acquisition alerts.
-- <img src="inventory-web/src/assets/images/icons/box-seam.svg" alt="Products" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Product Composition:** Build products using detailed recipes and measurement conversions.
-- <img src="inventory-web/src/assets/images/icons/graph-up.svg" alt="Maximum Production" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Maximum Production Module:** Instantly calculate how many units of a specific product can be manufactured before running out of limiting ingredients.
-- <img src="inventory-web/src/assets/images/icons/speedometer.svg" alt="Optimization" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Production Optimization:** Intelligent algorithms that analyze current inventory to suggest the most profitable production strategy.
-- <img src="inventory-web/src/assets/images/icons/diagram-3.svg" alt="Simulation" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Simulation Dashboard:** Test hypothetical scenarios without affecting actual data to forecast production bottlenecks.
+## ✨ Key Features
+
+- <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/graph-up-arrow-white.svg">
+    <img src="inventory-web/src/assets/images/icons/graph-up-arrow.svg" width="20">
+  </picture> **Interactive Dashboard:** Get a bird's-eye view of your business with high-level metrics and intuitive charts.
+
+- <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/basket-white.svg">
+    <img src="inventory-web/src/assets/images/icons/basket.svg" width="20">
+  </picture> **Raw Materials Management:** Keep track of stock levels, units of measurement, and acquisition alerts.
+
+- <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/box-seam-white.svg">
+    <img src="inventory-web/src/assets/images/icons/box-seam.svg" width="20">
+  </picture> **Product Composition:** Build products using detailed recipes and measurement conversions.
+
+- <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/graph-up-white.svg">
+    <img src="inventory-web/src/assets/images/icons/graph-up.svg" width="20">
+  </picture> **Maximum Production Module:** Instantly calculate how many units of a specific product can be manufactured before running out of limiting ingredients.
+
+- <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/speedometer-white.svg">
+    <img src="inventory-web/src/assets/images/icons/speedometer.svg" width="20">
+  </picture> **Production Optimization:** Intelligent algorithms that analyze current inventory to suggest the most profitable production strategy.
+
+- <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/diagram-3-white.svg">
+    <img src="inventory-web/src/assets/images/icons/diagram-3.svg" width="20">
+  </picture> **Simulation Dashboard:** Test hypothetical scenarios without affecting actual data to forecast production bottlenecks.
 
 ## 🛠️ Technology Stack
 
