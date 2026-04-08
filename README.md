@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="src/assets/images/logo/sweetventory-title.svg" alt="Sweetventory Logo" width="150" />
+<img src="inventory-web/src/assets/images/logo/sweetventory-title.svg" alt="Sweetventory Logo" width="150" />
 
 # 📦 Web Inventory & Production Simulation
 
