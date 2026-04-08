@@ -21,7 +21,6 @@
 
 ## ✨ Key Features
 
-<img src="inventory-web/src/assets/icons/graph-up-arrow.svg" width="20" />
 - <img src="inventory-web/src/assets/icons/graph-up-arrow.svg" alt="Dashboard" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Interactive Dashboard:** Get a bird's-eye view of your business with high-level metrics and intuitive charts.
 - <img src="inventory-web/src/assets/icons/basket.svg" alt="Raw Materials" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Raw Materials Management:** Keep track of stock levels, units of measurement, and acquisition alerts.
 - <img src="inventory-web/src/assets/icons/box-seam.svg" alt="Products" width="20" height="20" style="background-color: white; border-radius: 4px; padding: 2px;"> **Product Composition:** Build products using detailed recipes and measurement conversions.
