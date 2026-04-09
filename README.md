@@ -104,9 +104,9 @@ Follow these steps to run the frontend application in your local development env
 
 *(Here you can add screenshots of your application in the future!)*
 
-- **Dashboard**: `<img width="1664" height="879" alt="image" src="https://github.com/user-attachments/assets/8d345c7a-9456-4d2a-9a06-ed09c3e6f26e" />
-`
-- **Production Optimization**: `![Optimization](/path/to/img.png)`<img width="1678" height="876" alt="image" src="https://github.com/user-attachments/assets/eb703b57-28ef-4f93-afa0-4a7edc0ac30d" />
+- **Dashboard**:<img width="1664" height="879" alt="image" src="https://github.com/user-attachments/assets/8d345c7a-9456-4d2a-9a06-ed09c3e6f26e" />
+
+- **Production Optimization**:<img width="1678" height="876" alt="image" src="https://github.com/user-attachments/assets/eb703b57-28ef-4f93-afa0-4a7edc0ac30d" />
 
 
 ---
