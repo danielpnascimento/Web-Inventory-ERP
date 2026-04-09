@@ -103,10 +103,12 @@ Follow these steps to run the frontend application in your local development env
 ## 💻 Interface Previews
 
 
-- **Dashboard**:<img width="1101" height="876" alt="image" src="https://github.com/user-attachments/assets/5cee4c84-b93c-4d6e-bf7f-a5e4e4282096" />
+- **Dashboard**:<img width="1188" height="877" alt="image" src="https://github.com/user-attachments/assets/9f07c1e0-db5d-4437-ba00-bf9c00e62222" />
 
 
-- **Production Optimization**:<img width="1097" height="794" alt="image" src="https://github.com/user-attachments/assets/a039b7ca-76da-4839-a88b-421840f80b90" />
+
+- **Production Optimization**:<img width="1201" height="874" alt="image" src="https://github.com/user-attachments/assets/823465bd-b517-4eb9-8263-7aefb8aecc2d" />
+
 
 
 ---
