@@ -1,6 +1,6 @@
 [build]
   base = "inventory-web-demo"
-  publish = "dist/inventory-web"
+  publish = "dist/inventory-web/browser"
   command = "npm run build"
 
 [[redirects]]
