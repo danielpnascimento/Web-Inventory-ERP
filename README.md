@@ -24,32 +24,32 @@
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/graph-up-arrow-white.svg">
     <img src="inventory-web/src/assets/images/icons/graph-up-arrow.svg" width="20">
-  </picture> <strong>  Interactive Dashboard:</strong> Get a bird's-eye view of your business with high-level metrics and intuitive charts.</br></br>
+  </picture>&nbsp;<strong>Interactive Dashboard:</strong>&nbsp;Monitor and gain an overview of your business with real-time data on material levels, products, maximum production, and optimization.</br></br>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/basket-white.svg">
     <img src="inventory-web/src/assets/images/icons/basket.svg" width="20">
-  </picture> <strong>  Raw Materials Management:</strong> Keep track of stock levels, units of measurement, and acquisition alerts.</br></br>
+  </picture>&nbsp;<strong>Raw Materials Management:</strong>&nbsp;Registration and updates of materials with a size chart.</br></br>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/box-seam-white.svg">
     <img src="inventory-web/src/assets/images/icons/box-seam.svg" width="20">
-  </picture> <strong>  Product Composition:</strong> Build products using detailed recipes and measurement conversions.</br></br>
+  </picture>&nbsp;<strong>Product Composition:</strong>&nbsp;Build products using detailed recipes and measurement conversions.</br></br>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/graph-up-white.svg">
     <img src="inventory-web/src/assets/images/icons/graph-up.svg" width="20">
-  </picture> <strong>  Maximum Production Module:</strong> Instantly calculate how many units of a specific product can be manufactured before running out of limiting ingredients.</br></br>
+  </picture>&nbsp;<strong>Maximum Production Module:</strong>&nbsp;A listing with an instant calculation of all products and how many units of each can be manufactured before the limiting ingredients run out, revealing what those ingredients would be.</br></br>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/speedometer-white.svg">
     <img src="inventory-web/src/assets/images/icons/speedometer.svg" width="20">
-  </picture> <strong> Production Optimization:</strong> Intelligent algorithms that analyze current inventory to suggest the most profitable production strategy.</br></br>
+  </picture>&nbsp;<strong>Production Optimization:</strong>&nbsp;Intelligent algorithms that analyze current inventory to suggest the most profitable production strategy.</br></br>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="inventory-web/src/assets/images/icons/diagram-3-white.svg">
     <img src="inventory-web/src/assets/images/icons/diagram-3.svg" width="20">
-  </picture> <strong>  Simulation Dashboard:</strong> Test hypothetical scenarios without affecting actual data to forecast production bottlenecks.</br></br>
+  </picture>&nbsp;<strong>Simulation Dashboard:</strong>&nbsp;Test hypothetical scenarios without affecting actual data to forecast production bottlenecks.</br></br>
 
 ## 🛠️ Technology Stack
 
@@ -100,12 +100,17 @@ Follow these steps to run the frontend application in your local development env
 
 ---
 
-## 📱 Interface Previews
+## 💻 Interface Previews
 
-*(Here you can add screenshots of your application in the future!)*
 
-- **Dashboard**: `![Dashboard](/path/to/img.png)`
-- **Production Optimization**: `![Optimization](/path/to/img.png)`
+- **Dashboard**:
+<img width="1151" height="874" alt="image" src="https://github.com/user-attachments/assets/25eb6163-f62d-4851-a364-8e1837aa1de3" />
+
+
+
+- **Production Optimization**:
+<img width="1165" height="873" alt="image" src="https://github.com/user-attachments/assets/f92d9cbe-cd17-4a6f-ad57-83c882633084" />
+
 
 ---
 
