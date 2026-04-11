@@ -2,3 +2,8 @@
   base = "inventory-web-demo"
   publish = "dist/inventory-web"
   command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
