@@ -1,0 +1,13 @@
+<app-sidebar #sidebar></app-sidebar>
+
+<div *ngIf="!sidebar.sidebarClose || !navbar.navbarClose" class="position-fixed top-0 start-0 w-100 h-100 "
+  (click)="closeAll(sidebar, navbar)" style="z-index: 900;">
+</div>
+
+<app-navbar #navbar></app-navbar>
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
+
+<app-toast></app-toast>
+

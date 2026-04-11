@@ -1,0 +1,174 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+
+.fs-7 {
+  font-size: 0.7rem !important;
+}
+
+.fs-8 {
+  font-size: 0.6rem !important;
+}
+
+
+.bg-sky-blue {
+  background-color: #87CEFA !important;
+}
+
+.icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.btn-register:hover .icon-circle {
+  background-color: #fff;
+  color: #000;
+}
+.btn-register {
+  transition: all 0.2s ease;
+}
+
+.person-page-link {
+  background-color: #f8f9fa;
+  color: #000;
+  text-decoration: none;
+}
+
+.person-page-link:hover {
+  background-color: #e9ecef;
+  color: #000;
+}
+
+.page-item.active .person-page-link {
+  background-color: #000;
+  border-color: #000;
+  color: white;
+}
+
+.page-link.custom-outline {
+  border: 1px solid #6c757d;
+  color: #6c757d;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.page-link.custom-outline:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-white-outline {
+  background-color: #fff;
+  color: #000;
+  border-color: #6c757d;
+  transition: all 0.2s ease;
+}
+
+.btn-white-outline:hover {
+  background-color: #6c757d;
+  color: #fff;
+  border-color: #6c757d;
+}
+
+.custom-offcanvas {
+  box-shadow: -8px 0 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s ease-in-out;
+}
+
+.offcanvas.offcanvas-end {
+  width: 500px !important; 
+  max-width: 90vw; 
+  transition: all 0.4s ease-in-out;
+  overflow: hidden; 
+}
+
+.nowrap-text {
+  white-space: nowrap;
+  font-size: clamp(0.8rem, 1.7vw, 0.85rem) !important;
+}
+
+.table-wrapper {
+  height: 500px;
+}
+
+.overflow-table-hidden {
+  height: 460px;
+}
+
+.overflow-table-hidden::-webkit-scrollbar {
+  width: 0px;
+}
+
+.table-wrapper table {
+  white-space: nowrap;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.header-custom {
+  color: #fff;
+  background: #000;
+  border-top-left-radius: 2rem;
+}
+
+.bg-teal-400 {
+  background-color: $teal-100 !important;
+  background: #D2F4EA !important;
+}
+
+.bg-blue-100 {
+  background-color: $blue-100;
+  background: #CFE2FF;
+}
+.bg-indigo-100 {
+  background-color: $indigo-100;
+  background: #E0CFFC;
+}
+
+.bg-orange-300 {
+  background-color: $orange-300;
+  background: #FEB272;
+}
+.custom-width-search {
+  width: 60% !important;
+}
+
+@media (max-width: 576px) {
+  .offcanvas.offcanvas-end {
+    width: 100% !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    right: 0 !important;
+    left: 0 !important;
+  }
+}
+
+@media (max-width: 400px) {
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    display: none;
+  }
+
+  .table-wrapper table {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 70px !important;
+  }
+
+  .custom-width-search {
+    width: 100% !important;
+  }
+
+
+}

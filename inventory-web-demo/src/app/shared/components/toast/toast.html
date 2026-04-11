@@ -1,0 +1,46 @@
+<div class="toast-container">
+
+  @for (toast of toasts; track toast.id) {
+
+  <div class="toast" [ngClass]="toast.type" (mouseenter)="pause(toast)" (mouseleave)="resume(toast)">
+
+    <div class="icon">
+
+      @switch (toast.type) {
+      @case ('success') { <i class="bi bi-check-circle fs-2"></i> }
+      @case ('error') { <i class="bi bi-x-octagon fs-2 "></i> }
+      @case ('info') { <i class="bi bi-exclamation-octagon fs-2"></i> }
+      @case ('warning') { <i class="bi bi-exclamation-triangle fs-2"></i> }
+      }
+
+    </div>
+
+    <div class="content">
+      {{toast.message}}
+    </div>
+
+    @if (toast.confirm) {
+    <div class="actions d-flex gap-2">
+      <button class="btn btn-sm btn-success rounded-pill px-3 shadow-sm nowrap-text" (click)="toast.onConfirm?.(); remove(toast.id)">
+        Yes
+      </button>
+      <button class="btn btn-sm btn-secondary rounded-pill px-3 shadow-sm nowrap-text" (click)="remove(toast.id)">
+        No
+      </button> 
+    </div>
+    }
+
+    <button class="close" (click)="remove(toast.id)">
+      <i class="bi bi-x-lg "></i>
+    </button>
+
+    <div class="progress">
+      <div class="bar" [style.width.%]="toast.progress">
+      </div>
+    </div>
+
+  </div>
+
+  }
+
+</div>

@@ -1,0 +1,55 @@
+<div class="sidebar d-none d-md-block  " [class.collapsed]="sidebarClose" [class.show]="sidebarClose" id="sidebarClose">
+
+  <button class="sidebar-toggle shadow-sm border-0" type="button" (click)="toggleSidebarOpen()">
+    <i class="bi bi-chevron-left"></i>
+  </button>
+
+  <div class="inner">
+
+    <div class="d-flex justify-content-center align-content-center mt-5">
+      <img routerLink="/" src="assets/images/logo/sweetventory-logo.svg" class="sidebar-logo" viewBox="0 0 100 100">
+    </div>
+
+    <nav class="sidenav d-flex flex-column">
+
+      <a routerLink="/app-dashboard" routerLinkActive="active"
+        class="navside-item d-flex align-items-center ">
+        <i class="bi bi-graph-up-arrow"></i>
+        <p>Dashboard</p>
+      </a>
+
+      <a routerLink="/app-raw-materials-list" routerLinkActive="active"
+        class="navside-item d-flex align-items-center ">
+        <i class="bi bi-basket"></i>
+        <p>Materials</p>
+      </a>
+
+      <a routerLink="/products" routerLinkActive="active"
+        class="navside-item d-flex align-items-center ">
+        <i class="bi bi-box-seam"></i>
+        <p>Product</p>
+      </a>
+
+      <a routerLink="/production-maximum" routerLinkActive="active"
+        class="navside-item d-flex align-items-center ">
+        <i class="bi bi-graph-up"></i>
+        <p>Maximum</p>
+      </a>
+
+      <a routerLink="/production-optimization" routerLinkActive="active"
+        class="navside-item d-flex align-items-center ">
+        <i class="bi bi-speedometer"></i>
+        <p>Optimization</p>
+      </a>
+
+      <a routerLink="/production-simulation" routerLinkActive="active"
+        class="navside-item d-flex align-items-center ">
+        <i class="bi bi-diagram-3"></i>
+        <p>Simulation</p>
+      </a>
+
+    </nav>
+
+  </div>
+
+</div>
