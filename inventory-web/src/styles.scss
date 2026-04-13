@@ -183,4 +183,8 @@
     display: none;
   }
 
+  .custom-width-search input::placeholder {
+    font-size: 0.8rem;
+    padding: 1.5rem !important;
+  }
 }

@@ -28,6 +28,7 @@
   background-color: #fff;
   color: #000;
 }
+
 .btn-register {
   transition: all 0.2s ease;
 }
@@ -81,10 +82,10 @@
 }
 
 .offcanvas.offcanvas-end {
-  width: 500px !important; 
-  max-width: 90vw; 
+  width: 500px !important;
+  max-width: 90vw;
   transition: all 0.4s ease-in-out;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .nowrap-text {
@@ -126,6 +127,7 @@
   background-color: $blue-100;
   background: #CFE2FF;
 }
+
 .bg-indigo-100 {
   background-color: $indigo-100;
   background: #E0CFFC;
@@ -135,6 +137,7 @@
   background-color: $orange-300;
   background: #FEB272;
 }
+
 .custom-width-search {
   width: 75% !important;
 }
@@ -171,13 +174,18 @@
   }
 
 
- .btn-register {
+  .btn-register {
     padding-right: 0.3rem !important;
     padding-left: 0.3rem !important;
   }
 
   .btn-register span:last-child {
     display: none;
+  }
+
+  .custom-width-search input::placeholder {
+    font-size: 0.8rem;
+    padding: 1.5rem !important;
   }
 
 }
