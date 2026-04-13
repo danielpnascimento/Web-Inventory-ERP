@@ -136,7 +136,7 @@
   background: #FEB272;
 }
 .custom-width-search {
-  width: 60% !important;
+  width: 75% !important;
 }
 
 @media (max-width: 576px) {
@@ -170,5 +170,14 @@
     width: 100% !important;
   }
 
+
+ .btn-register {
+    padding-right: 0.3rem !important;
+    padding-left: 0.3rem !important;
+  }
+
+  .btn-register span:last-child {
+    display: none;
+  }
 
 }
