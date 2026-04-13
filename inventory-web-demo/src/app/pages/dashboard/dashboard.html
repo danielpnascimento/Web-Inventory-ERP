@@ -102,7 +102,7 @@
                 </span>
 
                 <!-- Price and 'unit price' side by side -->
-                <div class="d-flex align-items-baseline justify-content-center">
+                <div class="d-flex align-items-baseline justify-content-center flex-wrap">
                   <div class="mt-1 me-2">
                     <h2 class="fw-bold mb-0 fs-6">
                       {{ top.unitPrice | currency:'BRL':'symbol' }}
@@ -120,7 +120,7 @@
                 </div>
 
                 <!-- Recommended Product Name -->
-                <div class="text-wrap">
+                <div class="text-wrap d-flex justify-content-center mt-1">
                   <span class="text-uppercase text-muted badge bg-orange-300 rounded-pill shadow-sm fs-8 py-1">
                     {{ top.product }}
                   </span>
