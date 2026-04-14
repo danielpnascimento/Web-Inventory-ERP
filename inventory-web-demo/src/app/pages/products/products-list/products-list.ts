@@ -13,7 +13,8 @@ import { ProductService } from '../../../core/services/product.service';
   selector: 'app-products',
   standalone: true,
   imports: [CommonModule, ProductsForm, FormsModule, ReactiveFormsModule, DragScrollDirective],
-  templateUrl: './products-list.html'
+  templateUrl: './products-list.html',
+  styleUrl: './products-list.scss'
 })
 export class Products implements OnInit {
 

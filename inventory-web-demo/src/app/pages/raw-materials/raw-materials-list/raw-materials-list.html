@@ -33,10 +33,10 @@
           <table class="table align-middle table-hover m-0">
             <thead class="table-dark text-center  ">
               <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Actions</th>
+                <th class="col-cod">Code</th>
+                <th class="col-name">Name</th>
+                <th class="col-qtd">Quantity</th>
+                <th class="col-actions">Actions</th>
               </tr>
             </thead>
           </table>
@@ -52,9 +52,9 @@
                 <ng-container *ngIf="!noResults">
                   <tr *ngFor="let material of getItemsPaginated(); trackBy: trackById">
 
-                    <td>{{material.code}}</td>
-                    <td class="text-wrap">{{material.name}}</td>
-                    <td>
+                    <td class="col-cod">{{material.code}}</td>
+                    <td class="col-name text-wrap">{{material.name}}</td>
+                    <td class="col-qtd">
                       {{ material.quantityInStock | number:'1.0-3' }}
                       <small>
                         {{ material.measure === 'G' ? 'g' : (material.measure === 'ML' ? 'ml' :

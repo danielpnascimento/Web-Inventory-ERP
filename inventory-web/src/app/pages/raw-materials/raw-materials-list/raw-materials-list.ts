@@ -15,7 +15,8 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-raw-materials-list',
   standalone: true,
   imports: [CommonModule, RawMaterialForm, FormsModule, ReactiveFormsModule, DragScrollDirective],
-  templateUrl: './raw-materials-list.html'
+  templateUrl: './raw-materials-list.html',
+  styleUrl: './raw-materials-list.scss'
 })
 
 export class RawMaterialsList implements OnInit {

@@ -35,10 +35,10 @@
           <table class="table align-middle table-hover m-0">
             <thead class="table-dark text-center  ">
               <tr>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Actions</th>
+                <th class="col-cod">Code</th>
+                <th class="col-name">Name</th>
+                <th class="col-price">Price</th>
+                <th class="col-actions">Actions</th>
               </tr>
             </thead>
           </table>
@@ -54,10 +54,10 @@
                 <ng-container *ngIf="!noResults">
                   <tr *ngFor="let produto of getItemsPaginated(); trackBy: trackById">
 
-                    <td>{{produto.code}}</td>
-                    <td class="text-wrap">{{produto.name}}</td>
-                    <td>{{produto.price | currency:'BRL':'symbol'}}</td>
-                    <td>
+                    <td class="col-cod">{{produto.code}}</td>
+                    <td class="col-name text-wrap">{{produto.name}}</td>
+                    <td class="col-price">{{produto.price | currency:'BRL':'symbol'}}</td>
+                    <td class="col-actions">
                       <!-- Actions -->
                       <button type="button"
                         class="btn btn-sm btn-outline-secondary rounded-pill px-2 shadow-sm nowrap-text me-2"
