@@ -152,17 +152,6 @@
   }
 }
 
-@media (max-width: 400px) {
-
-  th:nth-child(4),
-  td:nth-child(4) {
-    display: none;
-  }
-
-  .table-wrapper table {
-    font-size: 0.75rem;
-  }
-}
 
 @media (max-width: 768px) {
   .main-content {
@@ -186,6 +175,10 @@
   .custom-width-search input::placeholder {
     font-size: 0.8rem;
     padding: 1.5rem !important;
+  }
+  
+ .table-wrapper table {
+    font-size: 0.75rem;
   }
 
 }

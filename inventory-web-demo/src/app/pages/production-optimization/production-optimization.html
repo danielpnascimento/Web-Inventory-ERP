@@ -53,13 +53,13 @@
                     <!-- Product -->
                     <td class="text-wrap col-prod">
                       <div>{{product.product}}</div>
-                      <small class="text-success fw-bold" *ngIf="product.product === recommendedProduct">
-                        (Recommended!)
+                      <small class="text-success fw-bold word-break-mobile" *ngIf="product.product === recommendedProduct">
+                        <i class="bi bi-check-circle text-success"> Recomendado!</i>
                       </small>
                     </td>
 
                     <!-- Max. Quantity -->
-                    <td class="col-max p-1">
+                    <td class="text-wrap col-max p-1">
                       <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-1">
                         <span>{{product.maxProduction}} unit(s)</span>
                       </div>

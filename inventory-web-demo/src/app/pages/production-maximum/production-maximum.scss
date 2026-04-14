@@ -27,24 +27,28 @@
 
 @media (max-width: 768px) {
   .col-cod {
-    width: 75px !important;
+    width: 20% !important;
     min-width: 75px !important;
-    font-size: 0.82rem;
-    padding: 6px 2px !important;
+    font-size: 0.75rem;
   }
 
   .col-prod {
-    width: 30% !important;
-    font-size: 0.82rem;
+    width: 20% !important;
+    font-size: 0.75rem;
   }
 
   .col-max {
-    width: 25% !important;
-    font-size: 0.82rem;
+    width: 30% !important;
+    font-size: 0.75rem;
   }
 
   .col-limit {
     width: 30% !important;
-    font-size: 0.82rem;
+    font-size: 0.75rem;
+  }
+
+  .word-break-mobile {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
