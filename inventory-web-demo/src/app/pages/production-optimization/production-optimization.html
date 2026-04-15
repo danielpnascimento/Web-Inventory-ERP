@@ -84,17 +84,17 @@
         </div>
       </div>
 
-      <!-- Controles de Paginação -->
-      <div class="d-flex flex-wrap justify-content-center justify-content-xl-around mt-4 ">
+     <!-- Dropdown -->
+      <div class="pagination-controls d-flex flex-wrap align-items-center justify-content-center mt-3 gap-3 px-3">
 
-        <div class="me-5 mb-4 text-nowrap ">
+        <div class="d-flex align-items-center justify-content-center mb-3 text-nowrap">
           Total: <span class="btn bg-dark border text-white shadow-sm rounded-pill px-3 py-1 mx-2 me-4">
             {{ filteredList.length }}
           </span>
 
           <label for="pageSize" class="me-2 small-responsive">Items per page</label>
           <select id="pageSize"
-            class="badge text-bg-light text-start form-select d-inline-block rounded-pill shadow-sm border py-2 w-25"
+            class="form-select form-select-sm select-page-size rounded-pill shadow-sm border text-center"
             [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange()">
             <option [value]="10">10</option>
             <option [value]="20">20</option>
@@ -105,11 +105,11 @@
 
         <!-- Paginação (prev / pages / next) -->
         <nav>
-          <ul class="pagination pagination-sm justify-content-center">
+          <ul class="pagination pagination-sm pagination-custom ">
 
             <!-- Previous -->
             <li class="page-item">
-              <a class="page-link custom-outline border rounded-pill shadow-sm py-1 px-3 me-1"
+              <a class="page-link custom-outline border rounded-pill shadow-sm py-1 px-3"
                 [class.disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
                 <i class="bi bi-chevron-left "></i>
               </a>
@@ -117,7 +117,7 @@
 
             <!-- ... left -->
             <li class="page-item">
-              <span class="page-link text-black rounded-pill shadow-sm py-1 px-3 me-1"
+              <span class="page-link text-black rounded-pill shadow-sm py-1"
                 [style.visibility]="currentPage > 3 ? 'visible' : 'hidden'">
                 ...
               </span>

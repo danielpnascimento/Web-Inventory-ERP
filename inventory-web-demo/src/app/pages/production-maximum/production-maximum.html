@@ -8,7 +8,7 @@
       </div>
 
       <div
-        class="container mt-3 mb-3 d-flex justify-content-center align-items-center flex-nowrap gap-3 w-75 nowrap-text ">
+        class="container mt-3 mb-3 d-flex justify-content-center align-items-center flex-nowrap nowrap-text gap-3 w-75">
         <div class="d-flex justify-content-center me-sm-3 w-100">
           <div class="position-relative custom-width-search">
             <i
@@ -53,7 +53,8 @@
                     <!-- Name of Product -->
                     <td class="text-wrap col-prod">
                       <div>{{product.product}}</div>
-                      <small class="text-success fw-bold word-break-mobile" *ngIf="product.maxProduction === maxVal && maxVal > 0">
+                      <small class="text-success fw-bold word-break-mobile"
+                        *ngIf="product.maxProduction === maxVal && maxVal > 0">
                         <i class="bi bi-check-circle text-success"> Recomendado!</i>
                       </small>
                     </td>
@@ -86,17 +87,17 @@
         </div>
       </div>
 
-      <!-- Pagination Controls -->
-      <div class="d-flex flex-wrap justify-content-center justify-content-xl-around mt-4 ">
+      <!-- Dropdown -->
+      <div class="pagination-controls d-flex flex-wrap align-items-center justify-content-center mt-3 gap-3 px-3">
 
-        <div class="me-5 mb-4 text-nowrap ">
+        <div class="d-flex align-items-center justify-content-center mb-3 text-nowrap">
           Total: <span class="btn bg-dark border text-white shadow-sm rounded-pill px-3 py-1 mx-2 me-4">
             {{ filteredList.length }}
           </span>
 
           <label for="pageSize" class="me-2 small-responsive">Items per page</label>
           <select id="pageSize"
-            class="badge text-bg-light text-start form-select d-inline-block rounded-pill shadow-sm border py-2 w-25"
+            class="form-select form-select-sm select-page-size rounded-pill shadow-sm border text-center"
             [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange()">
             <option [value]="10">10</option>
             <option [value]="20">20</option>
@@ -107,11 +108,11 @@
 
         <!-- Pagination (prev / pages / next) -->
         <nav>
-          <ul class="pagination pagination-sm justify-content-center">
+          <ul class="pagination pagination-sm pagination-custom ">
 
             <!-- Previous -->
             <li class="page-item">
-              <a class="page-link custom-outline border rounded-pill shadow-sm py-1 px-3 me-1"
+              <a class="page-link custom-outline border rounded-pill shadow-sm py-1 px-3"
                 [class.disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">
                 <i class="bi bi-chevron-left "></i>
               </a>
@@ -119,7 +120,7 @@
 
             <!-- ... left -->
             <li class="page-item">
-              <span class="page-link text-black rounded-pill shadow-sm py-1 px-3 me-1"
+              <span class="page-link text-black rounded-pill shadow-sm py-1"
                 [style.visibility]="currentPage > 3 ? 'visible' : 'hidden'">
                 ...
               </span>
