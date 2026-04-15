@@ -10,3 +10,10 @@
 .custom-width-input-quantity-form {
   width: 130px !important;
 }
+
+@media (max-width: 576px) {
+  .custom-width-input-quantity-form, .measure-select, .material-select {
+    width: 100px !important;
+    font-size: 12px !important;
+  }
+}
