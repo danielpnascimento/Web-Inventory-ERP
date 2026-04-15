@@ -11,9 +11,8 @@
   width: 130px !important;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 476px) {
   .custom-width-input-quantity-form, .measure-select, .material-select {
-    width: 100px !important;
-    font-size: 12px !important;
+    font-size: 10px !important;
   }
 }
