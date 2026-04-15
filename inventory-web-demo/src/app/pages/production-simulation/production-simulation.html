@@ -14,8 +14,8 @@
         <!-- Select Product -->
         <div class="position-relative ">
           <i class="bi bi-search text-muted position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-          <select class="form-select rounded-pill shadow-sm ps-5 " [(ngModel)]="productId" name="productId"
-            [ngClass]="{'text-muted': productId === null}">
+          <select class="form-select rounded-pill shadow-sm ps-5 custom-placeholder" [(ngModel)]="productId"
+            name="productId" [ngClass]="{'text-muted': productId === null}">
             <option [ngValue]="null" disabled>Product</option>
             <option *ngFor="let p of products" [ngValue]="p.id">
               {{ p.code }} - {{ p.name }}
@@ -25,8 +25,8 @@
 
         <!-- Input Quantity -->
         <div class="custom-width-input-quantity">
-          <input type="number" class="form-control rounded-pill shadow-sm text-center" [(ngModel)]="quantity"
-            name="quantity" min="1" step="1" placeholder="Quantity">
+          <input type="number" class="form-control rounded-pill shadow-sm text-center custom-placeholder"
+            [(ngModel)]="quantity" name="quantity" min="1" step="1" placeholder="Quantity">
         </div>
 
         <button
