@@ -48,7 +48,7 @@
 
     <!-- This way of organizing them without so many lg, md and sm properties is the cleanest and most perfect "d-flex gap-2 align-items-center mb-3" -->
     <div *ngFor="let comp of compositions.controls; let i = index;" [formGroupName]="i"
-      class="d-flex gap-2 align-items-center mb-3">
+      class="d-flex gap-2 align-items-center justify-content-center mb-3">
 
       <!-- MATERIAL -->
       <select class="form-select rounded-pill shadow-sm bg-light material-select" formControlName="rawMaterialId"
