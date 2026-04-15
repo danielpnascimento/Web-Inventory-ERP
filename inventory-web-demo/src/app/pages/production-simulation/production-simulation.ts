@@ -34,9 +34,15 @@ export class ProductionSimulation implements OnInit {
   }
 
   simulate() {
-    if (!this.productId || !this.quantity) return;
+    if (!this.productId || !this.quantity || this.loading) return;
+
     this.loading = true;
     this.result = null;
+
+    const activeElement = document.activeElement as HTMLElement;
+    if (activeElement) {
+      activeElement.blur();
+    }
 
     this.simulationService.simulate(this.productId, this.quantity).subscribe({
       next: (data: ProductionSimulationModel) => {
