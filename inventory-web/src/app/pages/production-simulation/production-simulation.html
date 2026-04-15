@@ -91,14 +91,14 @@
             <table class="table align-middle m-0">
               <thead class="table-dark">
                 <tr>
-                  <th colspan="3" class="ps-3 bg-warning-subtle text-black">
-                    <i class="bi bi-cart3 me-2 fs-5"></i>What needs to be bought
+                  <th colspan="3" class="ps-3 bg-warning-subtle text-black font-small">
+                    <i class="bi bi-cart3 me-2 fs-5"></i>What you need to buy!
                   </th>
                 </tr>
                 <tr>
-                  <th class="font-small text-center">Material</th>
-                  <th class="font-small text-center">Missing Quantity</th>
-                  <th class="font-small text-center">Cart</th>
+                  <th class="col-mat-fal font-small text-center">Material</th>
+                  <th class="col-fal font-small text-center">Missing Quantity</th>
+                  <th class="col-status font-small text-center">Cart</th>
                 </tr>
               </thead>
               <tbody>
@@ -129,16 +129,16 @@
             <table class="table align-middle table-hover m-0">
               <thead class="table-dark">
                 <tr>
-                  <th colspan="4" class="ps-3 bg-sky-blue text-black">
+                  <th colspan="4" class="ps-3 bg-sky-blue text-black font-small">
                     <i class="bi bi-box-seam me-2 fs-5"></i>
-                    Materials for {{ result.requestedQuantity }} unit(s) of {{ result.product }}
+                    Materials for {{ result.requestedQuantity }} unit(s) of {{ result.product }}.
                   </th>
                 </tr>
                 <tr>
-                  <th class="font-small text-center">Material</th>
-                  <th class="font-small text-center">Required</th>
-                  <th class="font-small text-center">Stock</th>
-                  <th class="font-small text-center">Status</th>
+                  <th class="col-mat font-small text-center">Material</th>
+                  <th class="col-req font-small text-center">Required</th>
+                  <th class="col-stock font-small text-center">Stock</th>
+                  <th class="col-status font-small text-center">Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -174,15 +174,15 @@
             <table class="table align-middle m-0">
               <thead class="table-dark">
                 <tr>
-                  <th colspan="4" class="ps-3 bg-teal-400 text-black">
-                    <i class="bi bi-graph-up-arrow me-2 fs-5"></i>High Stock Materials
+                  <th colspan="4" class="ps-3 bg-teal-400 text-black font-small">
+                    <i class="bi bi-graph-up-arrow me-2 fs-5"></i>High Stock Materials!
                   </th>
                 </tr>
                 <tr>
-                  <th class="font-small text-center">Code</th>
-                  <th class="font-small text-center">Material</th>
-                  <th class="font-small text-center">Quantity</th>
-                  <th class="font-small text-center">Status</th>
+                  <th class="col-cod font-small text-center">Code</th>
+                  <th class="col-mat font-small text-center">Material</th>
+                  <th class="col-stock font-small text-center">Quantity</th>
+                  <th class="col-status font-small text-center">Status</th>
                 </tr>
               </thead>
               <tbody>

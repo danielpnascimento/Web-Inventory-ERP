@@ -10,12 +10,6 @@
     max-width: 130px !important;
 }
 
-@media (max-width: 768px) {
-    .custom-width-input-quantity {
-        width: 330px !important;
-    }
-}
-
 @media (max-width: 576px) {
     .custom-placeholder {
         font-size: 14px !important;
@@ -24,6 +18,33 @@
 
 @media (max-width: 768px) {
     .font-small {
-        font-size: 0.82rem !important;
+        font-size: 0.75rem !important;
+    }
+
+     .col-cod {
+        width: 20% !important; 
+    }
+    .col-mat {
+        width: 30% !important; 
+    }
+
+    .col-req {
+         width: 20% !important;
+    }
+
+    .col-stock {
+        width: 30% !important; 
+    }
+
+    .col-status {
+        width: 35% !important; 
+    }
+
+    .col-mat-fal, .col-fal, .col-car{
+        width: 33% !important; 
+    }
+
+    .custom-width-input-quantity {
+        width: 330px !important;
     }
 }
