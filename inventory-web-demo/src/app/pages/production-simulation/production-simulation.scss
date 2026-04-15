@@ -10,14 +10,18 @@
     max-width: 130px !important;
 }
 
+@media (max-width: 576px) {
+    .custom-placeholder {
+        font-size: 14px !important;
+    }
+}
+
 @media (max-width: 768px) {
     .custom-width-input-quantity {
         width: 330px !important;
     }
-}
 
-@media (max-width: 576px) {
-    .custom-placeholder {
+    .font-small {
         font-size: 14px !important;
     }
 }

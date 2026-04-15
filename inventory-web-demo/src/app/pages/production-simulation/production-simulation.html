@@ -96,22 +96,22 @@
                   </th>
                 </tr>
                 <tr>
-                  <th class="text-center">Material</th>
-                  <th class="text-center">Missing Quantity</th>
-                  <th class="text-center">Cart</th>
+                  <th class="font-small text-center">Material</th>
+                  <th class="font-small text-center">Missing Quantity</th>
+                  <th class="font-small text-center">Cart</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let miss of result.missingMaterials" [class.table]="miss.missing > 0"
                   [class.table]="miss.missing <= 0">
-                  <td class="text-center">
+                  <td class="font-small text-center">
                     {{ miss.material }}
                   </td>
 
-                  <td class="text-center ">
-                    <small class="badge bg-white text-black border rounded-pill ">
+                  <td class="font-small text-center ">
+                    <span class="badge bg-white text-black border rounded-pill ">
                       {{ miss.missing | number:'1.0-3' }}
-                    </small>
+                    </span>
                   </td>
                   <td class="text-center">
                     <i class="bi bi-cart3  text-warning" *ngIf="miss.missing <= miss.missing"></i>
@@ -135,28 +135,28 @@
                   </th>
                 </tr>
                 <tr>
-                  <th class="text-center">Material</th>
-                  <th class="text-center">Required</th>
-                  <th class="text-center">Stock</th>
-                  <th class="text-center">Status</th>
+                  <th class="font-small text-center">Material</th>
+                  <th class="font-small text-center">Required</th>
+                  <th class="font-small text-center">Stock</th>
+                  <th class="font-small text-center">Status</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let mat of result.materials" [class.table-danger]="mat.required > mat.stock"
                   [class.table]="mat.required <= mat.stock">
-                  <td class="text-center">{{ mat.material }}</td>
-                  <td class="text-center">
-                    <small>{{ mat.required | number:'1.0-3'}}
+                  <td class="font-small text-center">{{ mat.material }}</td>
+                  <td class="font-small text-center">
+                    <span>{{ mat.required | number:'1.0-3'}}
                       {{ mat.measure === 'G' ? 'g' : (mat.measure === 'ML' ? 'ml' : mat.measure === 'UN' ? 'un' :
                       mat.measure)}}
-                    </small>
+                    </span>
                   </td>
-                  <td class="text-center">
-                    <small [class.text-danger]="mat.required > mat.stock" [class.fw-bold]="mat.required > mat.stock">
+                  <td class="font-small text-center">
+                    <span [class.text-danger]="mat.required > mat.stock" [class.fw-bold]="mat.required > mat.stock">
                       {{ mat.stock | number:'1.0-3' }}
                       {{ mat.measure === 'G' ? 'g' : (mat.measure === 'ML' ? 'ml' :
                       mat.measure === 'UN' ? 'un' :'')}}
-                    </small>
+                    </span>
                   </td>
                   <td class="text-center">
                     <i class="bi bi-check-circle text-success" *ngIf="mat.required <= mat.stock"></i>
@@ -179,22 +179,22 @@
                   </th>
                 </tr>
                 <tr>
-                  <th class="text-center">Code</th>
-                  <th class="text-center">Material</th>
-                  <th class="text-center">Quantity</th>
-                  <th class="text-center">Status</th>
+                  <th class="font-small text-center">Code</th>
+                  <th class="font-small text-center">Material</th>
+                  <th class="font-small text-center">Quantity</th>
+                  <th class="font-small text-center">Status</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let high of result.highStockMaterials">
-                  <td class="small text-center">{{ high.code }}</td>
-                  <td class="text-center">
+                  <td class="font-small text-center">{{ high.code }}</td>
+                  <td class="font-small text-center">
                     {{ high.material }}
                   </td>
-                  <td class="text-center">{{ high.stock | number:'1.0-3' }}
-                    <small>{{ high.measure === 'G' ? 'g' : (high.measure === 'ML' ? 'ml' :
+                  <td class="font-small text-center">{{ high.stock | number:'1.0-3' }}
+                    <span>{{ high.measure === 'G' ? 'g' : (high.measure === 'ML' ? 'ml' :
                       high.measure === 'UN' ? 'un' :'')}}
-                    </small>
+                    </span>
                   </td>
                   <!-- Rule with positive chart icon -->
                   <td class="text-center">
