@@ -346,7 +346,8 @@ public class ProductService {
                 missingMaterials.add(
                         new MissingMaterialDTO(
                                 material.getName(),
-                                missing));
+                                missing,
+                                material.getMeasure()));
 
                 // define o material limitante
                 if (limitingMaterial == null) {

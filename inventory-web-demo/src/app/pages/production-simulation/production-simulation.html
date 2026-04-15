@@ -108,9 +108,10 @@
                     {{ miss.material }}
                   </td>
 
-                  <td class="font-small text-center ">
+                  <td class="font-small text-center "> {{ miss.missing | number:'1.0-3' }}
                     <span>
-                      {{ miss.missing | number:'1.0-3' }}
+                      {{ miss.measure === 'G' ? 'g' : miss.measure === 'ML' ? 'ml' : miss.measure === 'UN' ? 'un' :
+                      miss.measure}}
                     </span>
                   </td>
                   <td class="text-center">

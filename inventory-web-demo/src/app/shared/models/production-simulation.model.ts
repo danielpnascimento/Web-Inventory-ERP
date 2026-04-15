@@ -3,6 +3,7 @@
 export interface MissingMaterialModel {
   material: string;
   missing: number;
+  measure: string;
 }
 
 // Interface that represents ALL product materials with required vs. available stock (MaterialSimulationDTO from the backend)

@@ -61,7 +61,8 @@ export class ProductionSimulationService {
               
               missingMaterials.push({
                 material: material.name || '',
-                missing: missing
+                missing: missing,
+                measure: comp.measure
               });
 
               if (!limitingMaterialName) {
