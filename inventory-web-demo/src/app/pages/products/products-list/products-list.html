@@ -14,8 +14,8 @@
           <div class="position-relative custom-width-search">
             <i
               class="bi bi-search border-secondary text-muted position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-            <input type="search" class="form-control rounded-pill ps-md-5" placeholder="Search by Code, Product and Price"
-              aria-label="Search" [formControl]="searchControl">
+            <input type="search" class="form-control rounded-pill ps-md-5"
+              placeholder="Search by Code, Product and Price" aria-label="Search" [formControl]="searchControl">
           </div>
         </div>
 
@@ -85,7 +85,8 @@
 
         <div class="d-flex align-items-center justify-content-center mb-3 text-nowrap">
           Total:<span
-            class="btn bg-dark border text-white shadow-sm rounded-pill rounded-pill shadow-sm px-3 py-1 mx-2 me-4">
+            class="btn bg-dark border text-white shadow-sm rounded-pill rounded-pill shadow-sm px-3 py-1 mx-2 me-4"
+            translate="no">
             {{ listFiltered.length }}</span>
 
           <label for="pageSize" class="me-2 small-responsive">Items per page</label>
@@ -179,7 +180,6 @@
   </div>
 
   <div class="offcanvas-body">
-    <app-products-form [selectedProduct]="productEdit"
-    (returnRegister)="returnRegister($event)"></app-products-form>
+    <app-products-form [selectedProduct]="productEdit" (returnRegister)="returnRegister($event)"></app-products-form>
   </div>
 </div>

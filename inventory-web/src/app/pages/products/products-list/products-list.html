@@ -85,7 +85,8 @@
 
         <div class="d-flex align-items-center justify-content-center mb-3 text-nowrap">
           Total:<span
-            class="btn bg-dark border text-white shadow-sm rounded-pill rounded-pill shadow-sm px-3 py-1 mx-2 me-4">
+            class="btn bg-dark border text-white shadow-sm rounded-pill rounded-pill shadow-sm px-3 py-1 mx-2 me-4"
+            translate="no">
             {{ listFiltered.length }}</span>
 
           <label for="pageSize" class="me-2 small-responsive">Items per page</label>
@@ -93,11 +94,10 @@
           <select id="pageSize"
             class="form-select form-select-sm select-page-size rounded-pill shadow-sm border text-center"
             [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange()">
-            <!-- [(ngModel)]="pageSize" (ngModelChange)="onPageSizeChange($event)"> -->
             <option [value]="10">10</option>
             <option [value]="20">20</option>
             <option [value]="30">30</option>
-            <option [value]="listFiltered.length">All</option>
+            <option [value]="listFiltered.length" translate="no">All</option>
           </select>
         </div>
 
