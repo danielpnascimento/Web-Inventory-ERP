@@ -88,7 +88,7 @@
         <!-- Table: Missing Items -->
         <div *ngIf="isInsufficient && result.missingMaterials.length > 0" class="mb-4">
           <div class="table-responsive shadow-sm rounded-4 border">
-            <table class="table align-middle m-0">
+            <table class="table align-middle table-hover m-0">
               <thead class="table-dark">
                 <tr>
                   <th colspan="3" class="ps-3 bg-warning-subtle text-black font-small">
@@ -141,14 +141,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let mat of result.materials" [class.table-danger]="mat.required > mat.stock"
-                  [class.table]="mat.required <= mat.stock">
+                <tr *ngFor="let mat of result.materials" [class.table-danger]="mat.required > mat.stock">
                   <td class="font-small text-center">{{ mat.material }}</td>
                   <td class="font-small text-center">
-                    <span>{{ mat.required | number:'1.0-3'}}
-                      {{ mat.measure === 'G' ? 'g' : (mat.measure === 'ML' ? 'ml' : mat.measure === 'UN' ? 'un' :
-                      mat.measure)}}
-                    </span>
+                    {{ mat.required | number:'1.0-3'}}
+                    {{ mat.measure === 'G' ? 'g' : (mat.measure === 'ML' ? 'ml' : mat.measure === 'UN' ? 'un' :
+                    mat.measure)}}
                   </td>
                   <td class="font-small text-center">
                     <span [class.text-danger]="mat.required > mat.stock" [class.fw-bold]="mat.required > mat.stock">
@@ -170,7 +168,7 @@
         <!-- Table: High Stock Materials -->
         <div *ngIf="result.highStockMaterials.length > 0">
           <div class="table-responsive shadow-sm rounded-4 border">
-            <table class="table align-middle m-0">
+            <table class="table align-middle table-hover m-0">
               <thead class="table-dark">
                 <tr>
                   <th colspan="4" class="ps-3 bg-teal-400 text-black font-small">
