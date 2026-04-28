@@ -109,10 +109,8 @@
                   </td>
 
                   <td class="font-small text-center "> {{ miss.missing | number:'1.0-3' }}
-                    <span>
-                      {{ miss.measure === 'G' ? 'g' : miss.measure === 'ML' ? 'ml' : miss.measure === 'UN' ? 'un' :
-                      miss.measure}}
-                    </span>
+                    {{ miss.measure === 'G' ? 'g' : miss.measure === 'ML' ? 'ml' : miss.measure === 'UN' ? 'un' :
+                    miss.measure}}
                   </td>
                   <td class="text-center">
                     <i class="bi bi-cart3  text-warning" *ngIf="miss.missing <= miss.missing"></i>

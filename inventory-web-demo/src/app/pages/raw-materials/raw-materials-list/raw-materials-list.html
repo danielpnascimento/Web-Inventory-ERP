@@ -56,10 +56,7 @@
                     <td class="col-name text-wrap">{{material.name}}</td>
                     <td class="col-qtd">
                       {{ material.quantityInStock | number:'1.0-3' }}
-                      <span>
-                        {{ material.measure === 'G' ? 'g' : (material.measure === 'ML' ? 'ml' :
-                        material.measure === 'UN' ? 'un' : '') }}
-                      </span>
+                      {{ material.measure === 'G' ? 'g' : (material.measure === 'ML' ? 'ml' : material.measure === 'UN' ? 'un' : '') }}
                     </td>
                     <td>
                       <!-- Actions -->
