@@ -179,6 +179,17 @@
 
   .custom-width-search {
     width: 100% !important;
+
+    &:has(input:focus),
+    &:has(input:not(:placeholder-shown)) {
+      i.bi-search {
+        display: none !important;
+      }
+    }
+
+    input:focus::placeholder {
+      color: transparent !important;
+    }
   }
 
   .btn-register {

@@ -179,26 +179,38 @@
 
   .custom-width-search {
     width: 100% !important;
-  }
 
-  .btn-register {
-    padding-right: 0.3rem !important;
-    padding-left: 0.3rem !important;
+    &:has(input:focus),
+    &:has(input:not(:placeholder-shown)) {
+      i.bi-search {
+        display: none !important;
+      }
+    }
 
+    input:focus::placeholder {
+      color: transparent !important;
+    }
   }
+}
 
-  .btn-register span:last-child {
-    display: none;
-  }
+.btn-register {
+  padding-right: 0.3rem !important;
+  padding-left: 0.3rem !important;
 
-  .custom-width-search input::placeholder {
-    font-size: 0.8rem;
-    padding: 1.5rem !important;
-  }
+}
 
-  .table-wrapper table {
-    font-size: 0.75rem;
-  }
+.btn-register span:last-child {
+  display: none;
+}
+
+.custom-width-search input::placeholder {
+  font-size: 0.8rem;
+  padding: 1.5rem !important;
+}
+
+.table-wrapper table {
+  font-size: 0.75rem;
+}
 }
 
 @media (max-width: 999px) {
