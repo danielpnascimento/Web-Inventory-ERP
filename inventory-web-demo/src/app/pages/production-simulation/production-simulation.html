@@ -191,9 +191,8 @@
                     {{ high.material }}
                   </td>
                   <td class="font-small text-center">{{ high.stock | number:'1.0-3' }}
-                    <span>{{ high.measure === 'G' ? 'g' : (high.measure === 'ML' ? 'ml' :
-                      high.measure === 'UN' ? 'un' :'')}}
-                    </span>
+                    {{ high.measure === 'G' ? 'g' : (high.measure === 'ML' ? 'ml' :
+                    high.measure === 'UN' ? 'un' :'')}}
                   </td>
                   <!-- Rule with positive chart icon -->
                   <td class="text-center">
