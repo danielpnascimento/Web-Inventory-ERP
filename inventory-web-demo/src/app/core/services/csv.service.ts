@@ -20,9 +20,9 @@ export class CsvService {
     const lines = data.split('\n').filter(l => l.trim() !== '');
 
     return lines.map(line => {
-      // Split by comma, but ignore commas inside double quotes
+      // Separe por vírgula, mas ignore as vírgulas dentro das aspas duplas.
       const values = line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-      // Remove surrounding quotes and trim spaces
+      // Remove as aspas duplas circundantes e recorta os espaços
       return values.map(v => v.replace(/^"|"$/g, '').trim());
     });
   }
